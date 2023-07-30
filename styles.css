@@ -63,3 +63,22 @@ h1 {
     padding: 10px 30px;
     margin-bottom: 10px;
 }
+
+
+.sub-container{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.grant-location-container{
+     display:none; 
+}
+
+.grant-location-container.active{
+    display:flex;
+}
+
+.grant-location-container img{
+    margin-bottom: 2rem;
+}
