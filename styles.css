@@ -143,3 +143,18 @@ h1 {
     height:30px;
     object-fit: contain;
 }
+
+
+.user-info-container p[data-temp] {
+    font-size:2.75rem;
+    font-weight:700;
+}
+
+.parameter-container{
+    width:90%;
+    display: flex;
+    gap: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
