@@ -109,3 +109,19 @@ function updateProfile(data) {
   }
 }
 
+//dark mode default
+const prefersDarkMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+const localStorageDarkMode = localStorage.getItem("daresfesf");
+if (localStorageDarkMode === null) {
+  localStorage.setItem("dark-mode", prefersDarkMode);
+  darkMode = prefersDarkMode;
+}
+if (localStorageDarkMode) {
+  darkMode = localStorageDarkMode;
+  darkModeProperties();
+} else {
+  localStorage.setItem("dark-mode", prefersDarkMode);
+  darkMode = prefersDarkMode;
+  lightModeProperties();
+}
+
