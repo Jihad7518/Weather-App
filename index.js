@@ -160,3 +160,15 @@ function lightModeProperties() {
   console.log("setting dark mode to false");
 }
 
+profilecontainer.classList.toggle("active");
+searchbar.classList.toggle("active");
+getUserData(url + "thepranaygupta");
+
+
+//INITIALISE UI
+function init() {
+  //initialise dark-mode variable to false;
+  //darkMode = true -> dark mode enable karna h 
+  //darMode = false -> light mode enable karna h 
+  darkMode = false;
+  
