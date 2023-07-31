@@ -85,3 +85,27 @@ function updateProfile(data) {
       } else {
         return true;
       }
+      }
+    avatar.src = `${data.avatar_url}`;
+    userName.innerText = data.name === null ? data.login : data.name;
+    user.innerText = `@${data.login}`;
+    user.href = `${data.html_url}`;
+    datesegments = data.created_at.split("T").shift().split("-");
+    date.innerText = `Joined ${datesegments[2]} ${months[datesegments[1] - 1]} ${datesegments[0]}`;
+    bio.innerText = data.bio == null ? "This profile has no bio" : `${data.bio}`;
+    repos.innerText = `${data.public_repos}`;
+    followers.innerText = `${data.followers}`;
+    following.innerText = `${data.following}`;
+    user_location.innerText = checkNull(data.location, user_location) ? data.location : "Not Available";
+    page.innerText = checkNull(data.blog, page) ? data.blog : "Not Available";
+    page.href = checkNull(data.blog, page) ? data.blog : "#";
+    twitter.innerText = checkNull(data.twitter_username, twitter) ? data.twitter_username : "Not Available";
+    twitter.href = checkNull(data.twitter_username, twitter) ? `https://twitter.com/${data.twitter_username}` : "#";
+    company.innerText = checkNull(data.company, company) ? data.company : "Not Available";
+    searchbar.classList.toggle("active");
+    profilecontainer.classList.toggle("active");
+  } else {
+    noresults.style.display = "block";
+  }
+}
+
