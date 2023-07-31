@@ -26,7 +26,6 @@ const twitter = get("twitter");
 const company = get("company");
 let darkMode = false;
 
-
 // Event Listeners
 btnsubmit.addEventListener("click", function () {
   if (input.value !== "") {
@@ -73,6 +72,7 @@ function getUserData(gitUrl) {
     });
 }
 
+
 //RENDER
 function updateProfile(data) {
   if (data.message !== "Not Found") {
@@ -85,7 +85,7 @@ function updateProfile(data) {
       } else {
         return true;
       }
-      }
+    }
     avatar.src = `${data.avatar_url}`;
     userName.innerText = data.name === null ? data.login : data.name;
     user.innerText = `@${data.login}`;
@@ -108,6 +108,8 @@ function updateProfile(data) {
     noresults.style.display = "block";
   }
 }
+
+
 
 //dark mode default
 const prefersDarkMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -172,7 +174,9 @@ function init() {
   //darMode = false -> light mode enable karna h 
   darkMode = false;
 
-   const value = localStorage.getItem("dark-mode");
+// const prefersDarkMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  const value = localStorage.getItem("dark-mode");
 
   if(value === null) {
     console.log("null k andar");
@@ -194,4 +198,3 @@ function init() {
 }
 
 init();
-
